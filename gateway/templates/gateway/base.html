@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>{% block title %}My amazing site{% endblock %}</title>
+
+        {# Load the tag library #}
+        {% load bootstrap4 %}
+
+        {# Load CSS and JavaScript #}
+        {% bootstrap_css %}
+        {% bootstrap_javascript jquery='full' %}
+
+        {# Display django.contrib.messages as Bootstrap alerts #}
+        {% bootstrap_messages %}
+
+        <style>
+          .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+          }
+
+          @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+            }
+          }
+        </style>
+        <!-- Custom styles for this template -->
+        {% load static %}
+        <link href="{% static 'gateway/style.css' %}" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav class="site-header navbar-expand-lg navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'gateway:machine_list' %}">Maschinen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Unternehmen</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+{#          <h1 class="display-4">Pricing</h1>#}
+{#          <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>#}
+        </div>
+
+        <div id="content" class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>
