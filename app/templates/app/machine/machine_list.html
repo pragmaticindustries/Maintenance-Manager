@@ -21,13 +21,9 @@
     <td>{{ machine.installation_date }}</td>
     <td>{{ machine.manufacturer.name }}</td>
     <td>{{ machine.operator.name }}</td>
-    <td><a href="{% url "gateway:machine_detail" machine.id %}">view</a></td>
-    <td><a href="{% url "gateway:machine_edit" machine.id %}">edit</a></td>
-    <td><a href="{% url "gateway:machine_delete" machine.id %}">delete</a></td>
     </tr>
     {% endfor %}
 </tbody>
 </table>
 
-<a href="{% url "gateway:machine_create" %}">New</a>
 {% endblock %}
