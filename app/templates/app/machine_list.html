@@ -1,6 +1,9 @@
-{% extends 'gateway/base.html' %}
+{% extends 'app/base.html' %}
 {% block content %}
-<h1>Alle Maschinen</h1>
+<h1 xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
+    xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
+    xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
+    xmlns:app="http://www.w3.org/1999/xhtml">Alle Maschinen</h1>
 
 <table class="table table-striped">
 <thead>
@@ -21,9 +24,13 @@
     <td>{{ machine.installation_date }}</td>
     <td>{{ machine.manufacturer.name }}</td>
     <td>{{ machine.operator.name }}</td>
+    <td><a href="{% url "app:machine_detail" machine.id %}">view</a></td>
+    <td><a href="{% url "app:machine_edit" machine.id %}">edit</a></td>
+    <td><a href="{% url "app:machine_delete" machine.id %}">delete</a></td>
     </tr>
     {% endfor %}
 </tbody>
 </table>
 
+<a href="{% url "app:machine_create" %}">New</a>
 {% endblock %}

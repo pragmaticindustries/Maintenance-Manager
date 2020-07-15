@@ -32,7 +32,7 @@
         </style>
         <!-- Custom styles for this template -->
         {% load static %}
-        <link href="{% static 'gateway/style.css' %}" rel="stylesheet">
+        <link href="{% static 'app/style.css' %}" rel="stylesheet">
     </head>
 
     <body>
@@ -44,7 +44,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'gateway:machine_list' %}">Maschinen</a>
+                     <a class="nav-link" href="{% url 'app:machine_list' %}">Maschinen</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Unternehmen</a>

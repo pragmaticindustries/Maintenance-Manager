@@ -1,4 +1,4 @@
-{% extends 'gateway/base.html' %}
+{% extends 'app/base.html' %}
 {% block content %}
 <h1>{{ machine.name }}</h1>
 
@@ -7,11 +7,11 @@
 </div>
 
 <div class="alert alert-info" role="alert">
-    Was manufactured by <a href="{% url 'gateway:company_detail' machine.manufacturer.id %}">{{ machine.manufacturer.name }}</a>
+    Was manufactured by <a href="{% url 'app:company_detail' machine.manufacturer.id %}">{{ machine.manufacturer.name }}</a>
 </div>
 
 <div class="alert alert-info" role="alert">
-    Is operated and owned by <a href="{% url 'gateway:company_detail' machine.operator.id %}">{{ machine.operator.name }}</a>
+    Is operated and owned by <a href="{% url 'app:company_detail' machine.operator.id %}">{{ machine.operator.name }}</a>
 </div>
 
 <a href="{% url 'gateway:machine_list' %}">Back to all Machines</a>
