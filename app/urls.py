@@ -3,6 +3,9 @@ from django.urls import path
 from app import views
 app_name = 'app'
 urlpatterns = [
+    path('', views.index, name='index'),
+    # ex: /polls/5/
+    path('company/<int:pk>/', views.CompanyDetail.as_view(), name='company_detail'),
     # Machine
     path('machines/', views.MachineList.as_view(), name='machine_list'),
     path('machine/<int:pk>/', views.MachineView.as_view(), name='machine_detail'),
