@@ -8,22 +8,23 @@
 <table class="table table-striped">
 <thead>
     <tr>
-    <th scope="col">Name</th>
-    <th scope="col">Firma</th>
+    <th scope="col">Datum</th>
+    <th scope="col">Beschreibung</th>
+    <th scope="col">Component</th>
     </tr>
 </thead>
 <tbody>
-    {% for operator in object_list %}
+    {% for maintenance in object_list %}
     <tr>
-    <td>{{ operator.name }}</td>
-    <td>{{ operator.company }}</td>
-    <td><a href="{% url "app:maintenance_detail" operator.id %}">view</a></td>
-    <td><a href="{% url "app:maintenance_edit" operator.id %}">edit</a></td>
-    <td><a href="{% url "app:maintenance_delete" operator.id %}">delete</a></td>
+    <td>{{ maintenance.maindate }}</td>
+    <td>{{ maintenance.maindescription }}</td>
+    <td><a href="{% url "app:maintenance_detail" maintenance.mainid %}">view</a></td>
+    <td><a href="{% url "app:maintenance_edit"  maintenance.mainid %}">edit</a></td>
+    <td><a href="{% url "app:maintenance_delete"  maintenance.mainid %}">delete</a></td>
     </tr>
     {% endfor %}
 </tbody>
 </table>
 
-<a href="{% url "app:operator_create" %}">New</a>
+<a href="{% url "app:maintenance_create" %}">New</a>
 {% endblock %}

@@ -17,9 +17,9 @@
     <tr>
     <td>{{ operator.name }}</td>
     <td>{{ operator.company }}</td>
-    <td><a href="{% url "app:operator_detail" operator.id %}">view</a></td>
-    <td><a href="{% url "app:operator_edit" operator.id %}">edit</a></td>
-    <td><a href="{% url "app:operator_delete" operator.id %}">delete</a></td>
+    <td><a href="{% url "app:operator_detail" operator.opid %}">view</a></td>
+    <td><a href="{% url "app:operator_edit" operator.opid %}">edit</a></td>
+    <td><a href="{% url "app:operator_delete" operator.opid %}">delete</a></td>
     </tr>
     {% endfor %}
 </tbody>

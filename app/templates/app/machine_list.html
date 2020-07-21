@@ -24,9 +24,9 @@
     <td>{{ machine.installation_date }}</td>
     <td>{{ machine.manufacturer.name }}</td>
     <td>{{ machine.operator.name }}</td>
-    <td><a href="{% url "app:machine_detail" machine.id %}">view</a></td>
-    <td><a href="{% url "app:machine_edit" machine.id %}">edit</a></td>
-    <td><a href="{% url "app:machine_delete" machine.id %}">delete</a></td>
+    <td><a href="{% url "app:machine_detail" machine.machid %}">view</a></td>
+    <td><a href="{% url "app:machine_edit" machine.machid %}">edit</a></td>
+    <td><a href="{% url "app:machine_delete" machine.machid %}">delete</a></td>
     </tr>
     {% endfor %}
 </tbody>

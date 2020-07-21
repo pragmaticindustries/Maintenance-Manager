@@ -8,22 +8,24 @@
 <table class="table table-striped">
 <thead>
     <tr>
-    <th scope="col">Name</th>
-    <th scope="col">Firma</th>
+    <th scope="col">Datum(geplant)</th>
+    <th scope="col">Beschreibung</th>
+    <th scope="col">Bauteil</th>
     </tr>
 </thead>
 <tbody>
-    {% for operator in object_list %}
+    {% for planedmaintenance in object_list %}
     <tr>
-    <td>{{ operator.name }}</td>
-    <td>{{ operator.company }}</td>
-    <td><a href="{% url "app:operator_detail" operator.id %}">view</a></td>
-    <td><a href="{% url "app:operator_edit" operator.id %}">edit</a></td>
-    <td><a href="{% url "app:operator_delete" operator.id %}">delete</a></td>
+    <td>{{ planedmaintenance.maindate }}</td>
+    <td>{{ planedmaintenance.plmaindescription }}</td>
+    <td>{{ planedmaintenance.component }}</td>
+    <td><a href="{% url "app:plmaintenance_detail" planedmaintenance.plmainid %}">view</a></td>
+    <td><a href="{% url "app:plmaintenance_edit" planedmaintenance.plmainid %}">edit</a></td>
+    <td><a href="{% url "app:plmaintenance_delete" planedmaintenance.plmainid %}">delete</a></td>
     </tr>
     {% endfor %}
 </tbody>
 </table>
 
-<a href="{% url "app:operator_create" %}">New</a>
+<a href="{% url "app:plmaintenance_create" %}">New</a>
 {% endblock %}
