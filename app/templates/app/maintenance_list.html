@@ -3,7 +3,7 @@
 <h1 xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
     xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
     xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
-    xmlns:app="http://www.w3.org/1999/xhtml">Alle Mitarbeiter</h1>
+    xmlns:app="http://www.w3.org/1999/xhtml">Alle Wartungen</h1>
 
 <table class="table table-striped">
 <thead>
@@ -17,9 +17,9 @@
     <tr>
     <td>{{ operator.name }}</td>
     <td>{{ operator.company }}</td>
-    <td><a href="{% url "app:operator_detail" operator.id %}">view</a></td>
-    <td><a href="{% url "app:operator_edit" operator.id %}">edit</a></td>
-    <td><a href="{% url "app:operator_delete" operator.id %}">delete</a></td>
+    <td><a href="{% url "app:maintenance_detail" operator.id %}">view</a></td>
+    <td><a href="{% url "app:maintenance_edit" operator.id %}">edit</a></td>
+    <td><a href="{% url "app:maintenance_delete" operator.id %}">delete</a></td>
     </tr>
     {% endfor %}
 </tbody>

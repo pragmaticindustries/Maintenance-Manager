@@ -7,7 +7,8 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from app.models import Machine,Company,Operator,Component,ComponentGroup,Maintenance,PlanedMaintencance
+from app.models import Machine, Company, Operator, Component, ComponentGroup, Maintenance, PlanedMaintencance
+
 
 def index(request):
     context = {
@@ -15,6 +16,7 @@ def index(request):
         'machines': Machine.objects.all()
     }
     return render(request, 'app/index.html', context)
+
 
 def home(request):
     context = {
@@ -32,6 +34,7 @@ class CompanyDetail(generic.DetailView):
     model = Company
     template_name = 'app/company_detail.html'
 
+
 class MachineList(generic.ListView):
     model = Machine
 
@@ -42,19 +45,20 @@ class MachineView(generic.DetailView):
 
 class MachineCreate(generic.CreateView):
     model = Machine
-    fields = ['name','description', 'installation_date', 'manufacturer', 'operator']
+    fields = ['name', 'description', 'installation_date', 'manufacturer', 'operator']
     success_url = reverse_lazy('app:machine_list')
 
 
 class MachineUpdate(generic.UpdateView):
     model = Machine
-    fields = ['name','description', 'installation_date', 'manufacturer', 'operator']
+    fields = ['name', 'description', 'installation_date', 'manufacturer', 'operator']
     success_url = reverse_lazy('app:machine_list')
 
 
 class MachineDelete(generic.DeleteView):
     model = Machine
     success_url = reverse_lazy('app:machine_list')
+
 
 class CompanyList(generic.ListView):
     model = Company
@@ -66,13 +70,13 @@ class CompanyView(generic.DetailView):
 
 class CompanyCreate(generic.CreateView):
     model = Company
-    fields = ['name','description', 'installation_date', 'manufacturer', 'operator']
+    fields = ['name', 'description', 'installation_date', 'manufacturer', 'operator']
     success_url = reverse_lazy('app:company_list')
 
 
 class CompanyUpdate(generic.UpdateView):
     model = Company
-    fields = ['name','description', 'installation_date', 'manufacturer', 'operator']
+    fields = ['name', 'description', 'installation_date', 'manufacturer', 'operator']
     success_url = reverse_lazy('app:company_list')
 
 
@@ -91,13 +95,13 @@ class OperatorView(generic.DetailView):
 
 class OperatorCreate(generic.CreateView):
     model = Operator
-    fields = ['name','description', 'installation_date', 'manufacturer', 'operator']
+    fields = ['name', 'description', 'installation_date', 'manufacturer', 'operator']
     success_url = reverse_lazy('app:company_list')
 
 
 class OperatorUpdate(generic.UpdateView):
     model = Operator
-    fields = ['name','description', 'installation_date', 'manufacturer', 'operator']
+    fields = ['name', 'description', 'installation_date', 'manufacturer', 'operator']
     success_url = reverse_lazy('app:company_list')
 
 
@@ -116,13 +120,13 @@ class ComponentView(generic.DetailView):
 
 class ComponentCreate(generic.CreateView):
     model = Component
-    fields = ['name','description', 'installation_date', 'manufacturer', 'operator']
+    fields = ['name', 'description', 'installation_date', 'manufacturer', 'operator']
     success_url = reverse_lazy('app:company_list')
 
 
 class ComponentUpdate(generic.UpdateView):
     model = Component
-    fields = ['name','description', 'installation_date', 'manufacturer', 'operator']
+    fields = ['name', 'description', 'installation_date', 'manufacturer', 'operator']
     success_url = reverse_lazy('app:company_list')
 
 
@@ -141,16 +145,66 @@ class ComponentGroupView(generic.DetailView):
 
 class ComponentGroupCreate(generic.CreateView):
     model = ComponentGroup
-    fields = ['name','description', 'installation_date', 'manufacturer', 'operator']
+    fields = ['name', 'description', 'installation_date', 'manufacturer', 'operator']
     success_url = reverse_lazy('app:company_list')
 
 
 class ComponentGroupUpdate(generic.UpdateView):
     model = ComponentGroup
-    fields = ['name','description', 'installation_date', 'manufacturer', 'operator']
+    fields = ['name', 'description', 'installation_date', 'manufacturer', 'operator']
     success_url = reverse_lazy('app:company_list')
 
 
 class ComponentGroupDelete(generic.DeleteView):
     model = ComponentGroup
+    success_url = reverse_lazy('app:company_list')
+
+
+class MaintenanceList(generic.ListView):
+    model = Maintenance
+
+
+class MaintenanceView(generic.DetailView):
+    model = Maintenance
+
+
+class MaintenanceCreate(generic.CreateView):
+    model = Maintenance
+    fields = ['name', 'description', 'installation_date', 'manufacturer', 'operator']
+    success_url = reverse_lazy('app:company_list')
+
+
+class MaintenanceUpdate(generic.UpdateView):
+    model = Maintenance
+    fields = ['name', 'description', 'installation_date', 'manufacturer', 'operator']
+    success_url = reverse_lazy('app:company_list')
+
+
+class MaintenanceDelete(generic.DeleteView):
+    model = Maintenance
+    success_url = reverse_lazy('app:company_list')
+
+
+class PlanedMaintenanceList(generic.ListView):
+    model = PlanedMaintencance
+
+
+class PlanedMaintenanceView(generic.DetailView):
+    model = PlanedMaintencance
+
+
+class PlanedMaintenanceCreate(generic.CreateView):
+    model = PlanedMaintencance
+    fields = ['name', 'description', 'installation_date', 'manufacturer', 'operator']
+    success_url = reverse_lazy('app:company_list')
+
+
+class PlanedMaintenanceUpdate(generic.UpdateView):
+    model = PlanedMaintencance
+    fields = ['name', 'description', 'installation_date', 'manufacturer', 'operator']
+    success_url = reverse_lazy('app:company_list')
+
+
+class PlanedMaintenanceDelete(generic.DeleteView):
+    model = PlanedMaintencance
     success_url = reverse_lazy('app:company_list')

@@ -16,11 +16,22 @@ class Operator(models.Model):
     company=models.ForeignKey(Company,on_delete=models.PROTECT, related_name="operator_company")
 
 
+class Component(models.Model):
+    comid = models.UUIDField()
+    name = models.CharField(max_length=32)
+    description = models.CharField(max_length=256)
+    wearpart = models.BooleanField()
+    sparepart = models.BooleanField()
+    cyclecounter = models.IntegerField(default=0)
+    maintenanceintervall = models.IntegerField()
+
+
 class ComponentGroup(models.Model):
     comgrid = models.UUIDField()
     name = models.CharField(max_length=32)
     description = models.CharField(max_length=256)
     cyclecounter = models.IntegerField(default=0)
+    component=models.ForeignKey(Component,on_delete=models.PROTECT,related_name="component_componentgroup")
 
 
 class Machine(models.Model):
@@ -31,16 +42,6 @@ class Machine(models.Model):
     manufacturer = models.ForeignKey(Company, on_delete=models.PROTECT, related_name="manufacturer")
     operator = models.ForeignKey(Operator, on_delete=models.PROTECT, related_name="operator")
     componentgroup = models.ForeignKey(ComponentGroup, on_delete=models.PROTECT, related_name="machinecomponentgroup")
-
-
-class Component(models.Model):
-    comid = models.UUIDField()
-    name = models.CharField(max_length=32)
-    description = models.CharField(max_length=256)
-    wearpart = models.BooleanField()
-    sparepart = models.BooleanField()
-    cyclecounter = models.IntegerField(default=0)
-    maintenanceintervall = models.IntegerField()
 
 
 class Maintenance(models.Model):

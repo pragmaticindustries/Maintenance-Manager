@@ -3,23 +3,27 @@
 <h1 xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
     xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
     xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
-    xmlns:app="http://www.w3.org/1999/xhtml">Alle Maschinen</h1>
+    xmlns:app="http://www.w3.org/1999/xhtml">Alle Bauteilgruppen</h1>
 
 <table class="table table-striped">
 <thead>
     <tr>
     <th scope="col">Name</th>
-    <th scope="col">Firma</th>
+    <th scope="col">Beschreibung</th>
+    <th scope="col">Zykluszaehler</th>
+    <th scope="col">Bauteile</th>
     </tr>
 </thead>
 <tbody>
     {% for componentgroup in object_list %}
     <tr>
     <td>{{ componentgroup.name }}</td>
-    <td>{{ componentgroup.company }}</td>
-    <td><a href="{% url "app:operator_detail" operator.id %}">view</a></td>
-    <td><a href="{% url "app:operator_edit" operator.id %}">edit</a></td>
-    <td><a href="{% url "app:operator_delete" operator.id %}">delete</a></td>
+    <td>{{ componentgroup.description }}</td>
+    <td>{{ componentgroup.cyclecounter }}</td>
+    <td>{{ componentgroup.component }}</td>
+    <td><a href="{% url "app:componentgroup_detail" componentgroup.comgrid %}">view</a></td>
+    <td><a href="{% url "app:componentgroup_edit" componentgroup.comgrid %}">edit</a></td>
+    <td><a href="{% url "app:componentgroup_delete" componentgroup.comgrid %}">delete</a></td>
     </tr>
     {% endfor %}
 </tbody>

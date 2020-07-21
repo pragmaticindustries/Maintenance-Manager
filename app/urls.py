@@ -33,5 +33,17 @@ urlpatterns = [
     path('componentgroup/<int:pk>/', views.ComponentGroupView.as_view(), name='componentgroup_detail'),
     path('componentgroup/edit/<int:pk>/', views.ComponentGroupUpdate.as_view(), name='componentgroup_edit'),
     path('componentgroup/create/', views.ComponentGroupCreate.as_view(), name='componentgroup_create'),
-    path('componentgroup/delete/<int:pk>/', views.ComponentGroupDelete.as_view(), name='componentgroup_delete')
+    path('componentgroup/delete/<int:pk>/', views.ComponentGroupDelete.as_view(), name='componentgroup_delete'),
+    # Maintenance
+    path('maintenances/', views.MaintenanceList.as_view(), name='maintenance_list'),
+    path('maintenance/<int:pk>/', views.MaintenanceView.as_view(), name='maintenance_detail'),
+    path('maintenance/edit/<int:pk>/', views.MaintenanceUpdate.as_view(), name='maintenance_edit'),
+    path('maintenance/create/', views.MaintenanceUpdate.as_view(), name='maintenance_create'),
+    path('maintenance/delete/<int:pk>/', views.MaintenanceDelete.as_view(), name='maintenance_delete'),
+    # PlanedMaintenance
+    path('planedmaintenances/', views.PlanedMaintenanceList.as_view(), name='planedmaintenance_list'),
+    path('planedmaintenance/<int:pk>/', views.PlanedMaintenanceView.as_view(), name='planedmaintenance_detail'),
+    path('planedmaintenance/edit/<int:pk>/', views.PlanedMaintenanceUpdate.as_view(), name='planedmaintenance_edit'),
+    path('planedmaintenance/create/', views.PlanedMaintenanceUpdate.as_view(), name='planedmaintenance_create'),
+    path('planedmaintenance/delete/<int:pk>/', views.PlanedMaintenanceDelete.as_view(), name='planedmaintenance_delete')
 ]
