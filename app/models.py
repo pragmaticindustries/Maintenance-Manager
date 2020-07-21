@@ -31,7 +31,7 @@ class ComponentGroup(models.Model):
     name = models.CharField(max_length=32)
     description = models.CharField(max_length=256)
     cyclecounter = models.IntegerField(default=0)
-    component=models.ForeignKey(Component,on_delete=models.PROTECT,related_name="component_componentgroup")
+    component=models.ManyToManyField(Component)
 
 
 class Machine(models.Model):
@@ -41,16 +41,18 @@ class Machine(models.Model):
     installation_date = models.DateField('date installed')
     manufacturer = models.ForeignKey(Company, on_delete=models.PROTECT, related_name="manufacturer")
     operator = models.ForeignKey(Operator, on_delete=models.PROTECT, related_name="operator")
-    componentgroup = models.ForeignKey(ComponentGroup, on_delete=models.PROTECT, related_name="machinecomponentgroup")
+    componentgroup = models.ManyToManyField(ComponentGroup)
 
 
 class Maintenance(models.Model):
     mainid = models.UUIDField()
     maindate = models.DateTimeField()
     maindescpription = models.CharField(max_length=256)
+    component = models.ForeignKey(Component,on_delete=models.PROTECT,related_name="maintenance_component")
 
 
 class PlanedMaintencance(models.Model):
     plmainid = models.UUIDField()
     plmaindate = models.DateTimeField()
     plmaindescription = models.CharField(max_length=256)
+    component= models.ForeignKey(Component,on_delete=models.PROTECT,related_name="planedmaintenance_component")
