@@ -5,12 +5,15 @@ from django.db import models
 class Company(models.Model):
     compid = models.UUIDField()
     name = models.CharField(max_length=100)
-    address = models.CharField(max_length=200)
+    street = models.CharField(max_length=200)
+    ort = models.CharField(max_length=200)
+    plz = models.CharField(max_length=200)
 
 
 class Operator(models.Model):
     opid = models.UUIDField()
     name = models.CharField(max_length=256)
+    company=models.ForeignKey(Company,on_delete=models.PROTECT, related_name="operator_company")
 
 
 class ComponentGroup(models.Model):

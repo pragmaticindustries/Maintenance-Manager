@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.urls import path, include
 
+from app import views
+
 urlpatterns = [
-    #path('',)
+    path('',views.index,name="pragmatic industies gmbh"),
     path('app/', include('app.urls')),
 ]

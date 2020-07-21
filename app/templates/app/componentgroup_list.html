@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h1 xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
+    xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
+    xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
+    xmlns:app="http://www.w3.org/1999/xhtml">Alle Maschinen</h1>
+
+<table class="table table-striped">
+<thead>
+    <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Firma</th>
+    </tr>
+</thead>
+<tbody>
+    {% for componentgroup in object_list %}
+    <tr>
+    <td>{{ componentgroup.name }}</td>
+    <td>{{ componentgroup.company }}</td>
+    <td><a href="{% url "app:operator_detail" operator.id %}">view</a></td>
+    <td><a href="{% url "app:operator_edit" operator.id %}">edit</a></td>
+    <td><a href="{% url "app:operator_delete" operator.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "app:operator_create" %}">New</a>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<h1 xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
+    xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
+    xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
+    xmlns:app="http://www.w3.org/1999/xhtml">Alle Maschinen</h1>
+
+<table class="table table-striped">
+<thead>
+    <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Beschreibung</th>
+    <th scope="col">Verschleisteil</th>
+    <th scope="col">Austaushcbar</th>
+    <th scope="col">Zyklenzaehler</th>
+    <th scope="col">Wartungsintervall</th>
+    </tr>
+</thead>
+<tbody>
+    {% for component in object_list %}
+    <tr>
+    <td>{{ component.name }}</td>
+    <td>{{ component.desciption}}</td>
+    <td>{{ component.wearpart}}</td>
+    <td>{{ component.sparepart}}</td>
+    <td>{{ component.cyclecounter}}</td>
+    <td>{{ component.maintenanceintervall}}</td>
+    <td><a href="{% url "app:component_detail" component.comid %}">view</a></td>
+    <td><a href="{% url "app:component_edit"component.comid %}">edit</a></td>
+    <td><a href="{% url "app:component_delete" component.comid %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "app:component_create" %}">New</a>
+{% endblock %}

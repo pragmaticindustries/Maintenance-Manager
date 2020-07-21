@@ -1,0 +1,21 @@
+<h1>Overview over all Companies</h1>
+{% if companies %}
+    <ul>
+    {% for company in companies %}
+        <li><a href="{%  url 'app:company_detail' company.id %}">{{ company.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Companies are registered so far.</p>
+{% endif %}
+
+<h2>Overview over all Machines</h2>
+{% if machines %}
+    <ul>
+    {% for machine in machines %}
+        <li><a href="{%  url 'app:machine_detail' machine.id %}">{{ machine.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Companies are registered so far.</p>
+{% endif %}

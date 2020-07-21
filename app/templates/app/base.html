@@ -37,7 +37,7 @@
 
     <body>
         <nav class="site-header navbar-expand-lg navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="">Pragmatic Industries Gmbh</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -46,8 +46,23 @@
                     <li class="nav-item">
                      <a class="nav-link" href="{% url 'app:machine_list' %}">Maschinen</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Unternehmen</a>
+               <li class="nav-item">
+                        <a class="nav-link" href="{% url 'app:company_list' %}">Unternehmen</a>
+                    </li>
+                                   <li class="nav-item">
+                        <a class="nav-link" href="{% url 'app:operator_list' %}">Mitarbeiter</a>
+                    </li>
+                                   <li class="nav-item">
+                        <a class="nav-link" href="{% url 'app:componentgroup_list' %}">BauteilGruppe</a>
+                    </li>
+                                   <li class="nav-item">
+                        <a class="nav-link" href="{% url 'app:component_list' %}">Bauteil</a>
+                    </li>
+                                   <li class="nav-item">
+                        <a class="nav-link" href="{% url 'app:maintenance_list' %}">Wartung</a>
+                    </li>
+                                   <li class="nav-item">
+                        <a class="nav-link" href="{% url 'app:plannedmaintenance_list' %}">GeplanteWartung</a>
                     </li>
                 </ul>
             </div>
