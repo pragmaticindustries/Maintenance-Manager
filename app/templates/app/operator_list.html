@@ -10,6 +10,9 @@
     <tr>
     <th scope="col">Name</th>
     <th scope="col">Firma</th>
+            <th scope="col">View</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
     </tr>
 </thead>
 <tbody>
@@ -17,9 +20,9 @@
     <tr>
     <td>{{ operator.name }}</td>
     <td>{{ operator.company }}</td>
-    <td><a href="{% url "app:operator_detail" operator.opid %}">view</a></td>
-    <td><a href="{% url "app:operator_edit" operator.opid %}">edit</a></td>
-    <td><a href="{% url "app:operator_delete" operator.opid %}">delete</a></td>
+    <td><a href="{% url "app:operator_detail" operator.id %}">view</a></td>
+    <td><a href="{% url "app:operator_edit" operator.id %}">edit</a></td>
+    <td><a href="{% url "app:operator_delete" operator.id %}">delete</a></td>
     </tr>
     {% endfor %}
 </tbody>

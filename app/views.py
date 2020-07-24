@@ -10,20 +10,12 @@ from django.views import generic
 from app.models import Machine, Company, Operator, Component, ComponentGroup, Maintenance, PlanedMaintenance
 
 
-def index(request):
-    context = {
-        'companies': Company.objects.all(),
-        'machines': Machine.objects.all()
-    }
-    return render(request, 'app/index.html', context)
-
-
 def home(request):
-    context = {
-        'companies': Company.objects.all(),
-        'machines': Machine.objects.all()
-    }
-    return render(request, 'app/index.html', context)
+    return render(request, 'app/home.html')
+
+
+def homeApp(request):
+    return render(request, 'app/home_app.html')
 
 
 class MachineList(generic.ListView):
@@ -111,13 +103,13 @@ class ComponentView(generic.DetailView):
 
 class ComponentCreate(generic.CreateView):
     model = Component
-    fields = ['name', 'description', 'wearpart', 'sparepart', 'cyclecounter', 'maintenanceinvervall']
+    fields = ['name', 'description', 'wearpart', 'sparepart', 'cyclecounter', 'maintenanceintervall']
     success_url = reverse_lazy('app:component_list')
 
 
 class ComponentUpdate(generic.UpdateView):
     model = Component
-    fields = ['name', 'description', 'wearpart', 'sparepart', 'cyclecounter', 'maintenanceinvervall']
+    fields = ['name', 'description', 'wearpart', 'sparepart', 'cyclecounter', 'maintenanceintervall']
     success_url = reverse_lazy('app:component_list')
 
 

@@ -3,7 +3,7 @@ from django.urls import path
 from app import views
 app_name = 'app'
 urlpatterns = [
-    path('', views.home, name='pragmatic industries'),
+    path('', views.homeApp),
     # Machine
     path('machines/', views.MachineList.as_view(), name='machine_list'),
     path('machine/<int:pk>/', views.MachineView.as_view(), name='machine_detail'),
@@ -11,7 +11,7 @@ urlpatterns = [
     path('machine/create/', views.MachineCreate.as_view(), name='machine_create'),
     path('machine/delete/<int:pk>/', views.MachineDelete.as_view(), name='machine_delete'),
     # Company
-    path('company/', views.CompanyList.as_view(), name='company_list'),
+    path('companys/', views.CompanyList.as_view(), name='company_list'),
     path('company/<int:pk>/', views.CompanyView.as_view(), name='company_detail'),
     path('company/edit/<int:pk>/', views.CompanyUpdate.as_view(), name='company_edit'),
     path('company/create/', views.CompanyCreate.as_view(), name='company_create'),

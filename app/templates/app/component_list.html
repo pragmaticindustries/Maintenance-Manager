@@ -14,6 +14,9 @@
     <th scope="col">Austaushcbar</th>
     <th scope="col">Zyklenzaehler</th>
     <th scope="col">Wartungsintervall</th>
+            <th scope="col">View</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
     </tr>
 </thead>
 <tbody>
@@ -25,9 +28,9 @@
     <td>{{ component.sparepart}}</td>
     <td>{{ component.cyclecounter}}</td>
     <td>{{ component.maintenanceintervall}}</td>
-    <td><a href="{% url "app:component_detail" component.comid %}">view</a></td>
-    <td><a href="{% url "app:component_edit"component.comid %}">edit</a></td>
-    <td><a href="{% url "app:component_delete" component.comid %}">delete</a></td>
+   <td><a href="{% url "app:component_detail" component.id %}">detail</a></td>
+    <td><a href="{% url "app:component_edit" component.id %}">edit</a></td>
+    <td><a href="{% url "app:component_delete" component.id %}">delete</a></td>
     </tr>
     {% endfor %}
 </tbody>

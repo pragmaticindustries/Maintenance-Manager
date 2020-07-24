@@ -31,7 +31,7 @@ class Component(models.Model):
     wearpart = models.BooleanField()
     sparepart = models.BooleanField()
     cyclecounter = models.IntegerField(default=0)
-    maintenanceintervall = models.IntegerField()
+    maintenanceintervall = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
@@ -62,7 +62,7 @@ class Machine(models.Model):
 
 
 class Maintenance(models.Model):
-    # mainid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    #id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     maindate = models.DateTimeField()
     maindescpription = models.CharField(max_length=256)
     component = models.ForeignKey(Component, on_delete=models.PROTECT, related_name="maintenance_component")
@@ -72,7 +72,7 @@ class Maintenance(models.Model):
 
 
 class PlanedMaintenance(models.Model):
-    # plmainid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    #id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     plmaindate = models.DateTimeField()
     plmaindescription = models.CharField(max_length=256)
     component = models.ForeignKey(Component, on_delete=models.PROTECT, related_name="planedmaintenance_component")

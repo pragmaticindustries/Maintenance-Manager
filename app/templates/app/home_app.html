@@ -44,10 +44,25 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                     <a class="nav-link" href="app">Maintenance-Manager</a>
+                     <a class="nav-link" href="{% url 'app:machine_list' %}">Maschinen</a>
                     </li>
                <li class="nav-item">
-                        <a class="nav-link" href="admin">Administration</a>
+                        <a class="nav-link" href="{% url 'app:company_list' %}">Hersteller</a>
+                    </li>
+                                   <li class="nav-item">
+                        <a class="nav-link" href="{% url 'app:operator_list' %}">Betreiber</a>
+                    </li>
+                                   <li class="nav-item">
+                        <a class="nav-link" href="{% url 'app:componentgroup_list' %}">BauteilGruppe</a>
+                    </li>
+                                   <li class="nav-item">
+                        <a class="nav-link" href="{% url 'app:component_list' %}">Bauteil</a>
+                    </li>
+                                   <li class="nav-item">
+                        <a class="nav-link" href="{% url 'app:maintenance_list' %}">Wartung</a>
+                    </li>
+                                   <li class="nav-item">
+                        <a class="nav-link" href="{% url 'app:planedmaintenance_list' %}">GeplanteWartung</a>
                     </li>
                 </ul>
             </div>

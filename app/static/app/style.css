@@ -18,3 +18,9 @@ html {
 .card-deck .card {
   min-width: 220px;
 }
+.site-header.navbar-expand-lg.navbar.navbar-dark.bg-dark{
+color:green
+}
+.navbar-brand{
+color:green
+}

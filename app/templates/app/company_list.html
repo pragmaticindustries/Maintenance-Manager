@@ -21,9 +21,9 @@
     <td>{{ company.street}}</td>
     <td>{{ company.ort}}</td>
     <td>{{ company.plz}}</td>
-    <td><a href="{% url "app:company_detail" company.compid %}">detail</a></td>
-    <td><a href="{% url "app:company_edit" company.compid %}">edit</a></td>
-    <td><a href="{% url "app:company_delete" company.compid %}">delete</a></td>
+   <td><a href="{% url "app:company_detail" company.id %}">detail</a></td>
+    <td><a href="{% url "app:company_edit" company.id %}">edit</a></td>
+    <td><a href="{% url "app:company_delete" company.id %}">delete</a></td>
     </tr>
     {% endfor %}
 </tbody>
