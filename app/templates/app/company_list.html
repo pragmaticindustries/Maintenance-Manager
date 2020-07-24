@@ -1,9 +1,6 @@
 {% extends 'app/base.html' %}
 {% block content %}
-<h1 xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
-    xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
-    xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
-    xmlns:app="http://www.w3.org/1999/xhtml">Alle Firmen</h1>
+<h1 xmlns:app="http://www.w3.org/1999/xhtml">Alle Firmen</h1>
 
 <table class="table table-striped">
 <thead>
@@ -24,7 +21,7 @@
     <td>{{ company.street}}</td>
     <td>{{ company.ort}}</td>
     <td>{{ company.plz}}</td>
-    <td><a href="{% url "app:company_detail" company.compid %}">view</a></td>
+    <td><a href="{% url "app:company_detail" company.compid %}">detail</a></td>
     <td><a href="{% url "app:company_edit" company.compid %}">edit</a></td>
     <td><a href="{% url "app:company_delete" company.compid %}">delete</a></td>
     </tr>
