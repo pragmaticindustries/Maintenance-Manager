@@ -38,12 +38,12 @@ urlpatterns = [
     path('maintenances/', views.MaintenanceList.as_view(), name='maintenance_list'),
     path('maintenance/<int:pk>/', views.MaintenanceView.as_view(), name='maintenance_detail'),
     path('maintenance/edit/<int:pk>/', views.MaintenanceUpdate.as_view(), name='maintenance_edit'),
-    path('maintenance/create/', views.MaintenanceUpdate.as_view(), name='maintenance_create'),
+    path('maintenance/create/', views.MaintenanceCreate.as_view(), name='maintenance_create'),
     path('maintenance/delete/<int:pk>/', views.MaintenanceDelete.as_view(), name='maintenance_delete'),
     # PlanedMaintenance
     path('planedmaintenances/', views.PlanedMaintenanceList.as_view(), name='planedmaintenance_list'),
     path('planedmaintenance/<int:pk>/', views.PlanedMaintenanceView.as_view(), name='planedmaintenance_detail'),
     path('planedmaintenance/edit/<int:pk>/', views.PlanedMaintenanceUpdate.as_view(), name='planedmaintenance_edit'),
-    path('planedmaintenance/create/', views.PlanedMaintenanceUpdate.as_view(), name='planedmaintenance_create'),
+    path('planedmaintenance/create/', views.PlanedMaintenanceCreate.as_view(), name='planedmaintenance_create'),
     path('planedmaintenance/delete/<int:pk>/', views.PlanedMaintenanceDelete.as_view(), name='planedmaintenance_delete')
 ]

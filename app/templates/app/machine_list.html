@@ -12,7 +12,8 @@
     <th scope="col">Installationsdatum</th>
     <th scope="col">Hersteller</th>
     <th scope="col">Betreiber</th>
-    <th scope="col">View</th>
+    <th scope="col">BauteilGruppe</th>
+ <!--   <th scope="col">View</th>-->
     <th scope="col">Edit</th>
     <th scope="col">Delete</th>
     </tr>
@@ -24,7 +25,8 @@
     <td>{{ machine.installation_date }}</td>
     <td>{{ machine.manufacturer.name }}</td>
     <td>{{ machine.operator.name }}</td>
-    <td><a href="{% url "app:machine_detail" machine.id %}">view</a></td>
+    <td>{{ machine.componentgroup.name}}</td>
+  <!--  <td><a href="{% url "app:machine_detail" machine.id %}">view</a></td> -->
     <td><a href="{% url "app:machine_edit" machine.id %}">edit</a></td>
     <td><a href="{% url "app:machine_delete" machine.id %}">delete</a></td>
     </tr>

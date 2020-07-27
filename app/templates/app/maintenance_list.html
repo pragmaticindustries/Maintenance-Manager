@@ -11,7 +11,7 @@
     <th scope="col">Datum</th>
     <th scope="col">Beschreibung</th>
     <th scope="col">Component</th>
-            <th scope="col">View</th>
+ <!--           <th scope="col">View</th> -->
     <th scope="col">Edit</th>
     <th scope="col">Delete</th>
     </tr>
@@ -21,7 +21,8 @@
     <tr>
     <td>{{ maintenance.maindate }}</td>
     <td>{{ maintenance.maindescription }}</td>
-    <td><a href="{% url "app:maintenance_detail" maintenance.id %}">view</a></td>
+    <td>{{ maintenance.component.name }}</td>
+ <!--   <td><a href="{% url "app:maintenance_detail" maintenance.id %}">view</a></td> -->
     <td><a href="{% url "app:maintenance_edit"  maintenance.id %}">edit</a></td>
     <td><a href="{% url "app:maintenance_delete"  maintenance.id %}">delete</a></td>
     </tr>

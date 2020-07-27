@@ -3,7 +3,7 @@
 <h1 xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
     xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
     xmlns:app="http://www.w3.org/1999/xhtml" xmlns:app="http://www.w3.org/1999/xhtml"
-    xmlns:app="http://www.w3.org/1999/xhtml">Alle Mitarbeiter</h1>
+    xmlns:app="http://www.w3.org/1999/xhtml">Alle Geplanten Wartungen</h1>
 
 <table class="table table-striped">
 <thead>
@@ -11,7 +11,7 @@
     <th scope="col">Datum(geplant)</th>
     <th scope="col">Beschreibung</th>
     <th scope="col">Bauteil</th>
-            <th scope="col">View</th>
+   <!--         <th scope="col">View</th> -->
     <th scope="col">Edit</th>
     <th scope="col">Delete</th>
     </tr>
@@ -19,10 +19,10 @@
 <tbody>
     {% for planedmaintenance in object_list %}
     <tr>
-    <td>{{ planedmaintenance.maindate }}</td>
+    <td>{{ planedmaintenance.plmaindate }}</td>
     <td>{{ planedmaintenance.plmaindescription }}</td>
-    <td>{{ planedmaintenance.component }}</td>
-    <td><a href="{% url "app:planedmaintenance_detail" planedmaintenance.id %}">view</a></td>
+    <td>{{ planedmaintenance.component.name }}</td>
+<!--    <td><a href="{% url "app:planedmaintenance_detail" planedmaintenance.id %}">view</a></td> -->
     <td><a href="{% url "app:planedmaintenance_edit" planedmaintenance.id %}">edit</a></td>
     <td><a href="{% url "app:planedmaintenance_delete" planedmaintenance.id %}">delete</a></td>
     </tr>

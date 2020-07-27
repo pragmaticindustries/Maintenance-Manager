@@ -1,6 +1,6 @@
 {% extends 'app/base.html' %}
 {% block content %}
-<h1 xmlns:app="http://www.w3.org/1999/xhtml">Alle Firmen</h1>
+<h1 xmlns:app="http://www.w3.org/1999/xhtml">Alle Hersteller</h1>
 
 <table class="table table-striped">
 <thead>
@@ -9,7 +9,7 @@
     <th scope="col">Stasse</th>
     <th scope="col">Ort</th>
         <th scope="col">PLZ</th>
-    <th scope="col">View</th>
+  <!--  <th scope="col">View</th>-->
     <th scope="col">Edit</th>
     <th scope="col">Delete</th>
     </tr>
@@ -21,7 +21,7 @@
     <td>{{ company.street}}</td>
     <td>{{ company.ort}}</td>
     <td>{{ company.plz}}</td>
-   <td><a href="{% url "app:company_detail" company.id %}">detail</a></td>
+ <!--  <td><a href="{% url "app:company_detail" company.id %}">detail</a></td>-->
     <td><a href="{% url "app:company_edit" company.id %}">edit</a></td>
     <td><a href="{% url "app:company_delete" company.id %}">delete</a></td>
     </tr>

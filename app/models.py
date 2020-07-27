@@ -31,6 +31,7 @@ class Component(models.Model):
     wearpart = models.BooleanField()
     sparepart = models.BooleanField()
     cyclecounter = models.IntegerField(default=0)
+    currentcyclecounter= models.IntegerField(default=0)
     maintenanceintervall = models.IntegerField(default=0)
 
     def __str__(self):
@@ -42,6 +43,7 @@ class ComponentGroup(models.Model):
     name = models.CharField(max_length=32)
     description = models.CharField(max_length=256)
     cyclecounter = models.IntegerField(default=0)
+    currentcyclecounter = models.IntegerField(default=0)
     component = models.ManyToManyField(Component)
 
     def __str__(self):

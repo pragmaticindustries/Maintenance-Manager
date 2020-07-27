@@ -13,8 +13,9 @@
     <th scope="col">Verschleisteil</th>
     <th scope="col">Austaushcbar</th>
     <th scope="col">Zyklenzaehler</th>
+    <th scope="col">Aktueller Zykluszaehler</th>
     <th scope="col">Wartungsintervall</th>
-            <th scope="col">View</th>
+ <!--           <th scope="col">View</th> -->
     <th scope="col">Edit</th>
     <th scope="col">Delete</th>
     </tr>
@@ -27,8 +28,9 @@
     <td>{{ component.wearpart}}</td>
     <td>{{ component.sparepart}}</td>
     <td>{{ component.cyclecounter}}</td>
+    <td>{{ component.currentcyclecounter}}</td>
     <td>{{ component.maintenanceintervall}}</td>
-   <td><a href="{% url "app:component_detail" component.id %}">detail</a></td>
+<!--   <td><a href="{% url "app:component_detail" component.id %}">detail</a></td>-->
     <td><a href="{% url "app:component_edit" component.id %}">edit</a></td>
     <td><a href="{% url "app:component_delete" component.id %}">delete</a></td>
     </tr>

@@ -153,13 +153,13 @@ class MaintenanceView(generic.DetailView):
 
 class MaintenanceCreate(generic.CreateView):
     model = Maintenance
-    fields = ['maindate', 'maindescription', 'component']
+    fields = ['maindate', 'maindescpription', 'component']
     success_url = reverse_lazy('app:maintenance_list')
 
 
 class MaintenanceUpdate(generic.UpdateView):
     model = Maintenance
-    fields = ['maindate', 'maindescription', 'component']
+    fields = ['maindate', 'maindescpription', 'component']
     success_url = reverse_lazy('app:maintenance_list')
 
 
