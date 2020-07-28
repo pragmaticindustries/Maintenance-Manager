@@ -57,7 +57,7 @@ class Machine(models.Model):
     installation_date = models.DateField('date installed')
     manufacturer = models.ForeignKey(Company, on_delete=models.PROTECT, related_name="manufacturer")
     operator = models.ForeignKey(Operator, on_delete=models.PROTECT, related_name="operator")
-    componentgroup = models.ManyToManyField(ComponentGroup)
+    components = models.ManyToManyField(ComponentGroup)
 
     def __str__(self):
         return self.name
